@@ -12,15 +12,24 @@
 		<Color x:Key="UnoRedColor">#FFF65678</Color>
 
 		<!--  You can define your shadows in the resource dictionary  -->
-		<utu:ShadowCollection x:Name="ButtonShadows">
-			<utu:Shadow BlurRadius="15"
-						OffsetY="8"
-						Opacity="0.5"
-						Color="{StaticResource UnoBlueColor}" />
+		<utu:ShadowCollection x:Name="AlternateShadows">
+			<utu:Shadow BlurRadius="20"
+							OffsetX="-10"
+							OffsetY="-10"
+							Opacity="1"
+							Spread="-5"
+							Color="{StaticResource UnoRedColor}" />
+			<utu:Shadow BlurRadius="20"
+							OffsetX="-10"
+							OffsetY="-10"
+							Opacity="1"
+							Spread="5"
+							IsInner="True"
+							Color="{StaticResource UnoPurpleColor}" />
 		</utu:ShadowCollection>
 	</Page.Resources>
 
-	<utu:ShadowContainer Background="{StaticResource UnoGreenColor}">
+	<utu:ShadowContainer Background="{StaticResource UnoGreenColor}" x:Name="MyShadowContainer">
 		<utu:ShadowContainer.Shadows>
 			<!--  You can define your shadows directly  -->
 			<utu:ShadowCollection x:Name="Shadows">
@@ -43,6 +52,12 @@
 				Height="400"
 				Padding="16"
 				BorderThickness="1"
-				CornerRadius="20" />
+				CornerRadius="20">
+			<Image Source="ms-appx:///ShadowContainerApp/Assets/steve.png"
+				   VerticalAlignment="Center"
+				   HorizontalAlignment="Center"
+				   Tapped="Image_Tapped"
+				   Width="200" />
+		</Border>
 	</utu:ShadowContainer>
 </Page>
