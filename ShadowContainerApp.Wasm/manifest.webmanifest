@@ -1,0 +1,10 @@
+{
+  "background_color": "#ffffff",
+  "description": "ShadowContainerApp",
+  "display": "standalone",
+  "name": "ShadowContainerApp",
+  "short_name": "ShadowContainerApp",
+  "start_url": "/index.html",
+  "theme_color": "#ffffff",
+  "scope": "/"
+}
