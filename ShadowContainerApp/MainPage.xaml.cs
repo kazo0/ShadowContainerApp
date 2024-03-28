@@ -11,4 +11,9 @@ public sealed partial class MainPage : Page
 	{
 		MyShadowContainer.Shadows = MyShadowContainer.Shadows == AlternateShadows ? Shadows : AlternateShadows;
 	}
+
+	private void Button_Click(object sender, RoutedEventArgs e)
+	{
+		Frame.Navigate(typeof(NeumorphicPage));
+	}
 }

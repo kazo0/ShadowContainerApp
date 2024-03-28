@@ -1,0 +1,95 @@
+﻿<Page x:Class="ShadowContainerApp.NeumorphicPage"
+	  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	  xmlns:local="using:ShadowContainerApp"
+	  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	  xmlns:utu="using:Uno.Toolkit.UI"
+	  xmlns:ut="using:Uno.Themes"
+	  mc:Ignorable="d"
+	  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+	<utu:ShadowContainer x:Name="ShadowContainer"
+						 Background="{ThemeResource SurfaceBrush}"
+						 Margin="40">
+		<utu:ShadowContainer.Shadows>
+			<utu:ShadowCollection x:Name="Shadows">
+				<utu:Shadow BlurRadius="20" OffsetX="10" OffsetY="10" Opacity="0.5" Spread="0" Color="{StaticResource UnoPurpleColor}" />
+				<utu:Shadow BlurRadius="20" OffsetX="-10" OffsetY="-10" Opacity="0.5" Spread="0" Color="{StaticResource UnoRedColor}" />
+			</utu:ShadowCollection>
+		</utu:ShadowContainer.Shadows>
+		<Grid Padding="16"
+			  MaxWidth="600"
+			  MaxHeight="300"
+			  BorderBrush="{StaticResource CardStrokeColorDefaultBrush}"
+			  BorderThickness="1"
+			  CornerRadius="20">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<Grid RowSpacing="12"
+				  ColumnSpacing="12">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+
+				<TextBox Grid.Column="0"
+						 Grid.ColumnSpan="4"
+						 PlaceholderText="Street Address"
+						 Text="123 Uno Avenue"
+						 Style="{StaticResource NeumorphicTextBoxStyle}" />
+
+
+
+				<TextBox Grid.Row="1"
+						 Grid.ColumnSpan="2"
+						 PlaceholderText="City"
+						 Style="{StaticResource NeumorphicTextBoxStyle}"
+						 Text="Montreal" />
+
+				<TextBox Grid.Column="2"
+						 Grid.Row="1"
+						 PlaceholderText="Province"
+						 Text="QC"
+						 Style="{StaticResource NeumorphicTextBoxStyle}" />
+
+				<TextBox Grid.Row="1"
+						 Grid.Column="3"
+						 PlaceholderText="Postal Code"
+						 Text="H2Y 1M6"
+						 Style="{StaticResource NeumorphicTextBoxStyle}" />
+
+				<utu:Divider Grid.Row="2"
+							 Grid.ColumnSpan="4"
+							 Margin="0,12,0,0" />
+			</Grid>
+			<utu:TabBar x:Name="ThemeTabBar"
+						Grid.Row="2"
+						VerticalAlignment="Bottom"
+						Margin="12"
+						Style="{StaticResource NeumorphicTopTabBarStyle}">
+				<utu:TabBar.Items>
+					<utu:TabBarItem Content="Light">
+						<utu:TabBarItem.Icon>
+							<PathIcon Data="{StaticResource SunIcon}" />
+						</utu:TabBarItem.Icon>
+					</utu:TabBarItem>
+					<utu:TabBarItem Content="Dark">
+						<utu:TabBarItem.Icon>
+							<PathIcon Data="{StaticResource MoonIcon}" />
+						</utu:TabBarItem.Icon>
+					</utu:TabBarItem>
+				</utu:TabBar.Items>
+			</utu:TabBar>
+		</Grid>
+	</utu:ShadowContainer>
+</Page>
